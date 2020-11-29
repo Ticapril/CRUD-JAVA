@@ -1,0 +1,57 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+
+<%@page import="dao.Cliente_DAO" %>
+<%@page import="java.util.List" %>
+<%@page import="model.Cliente" %>
+
+
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<a href=InserirCategoria.jsp">Inserir Categoria</a>
+	
+	<%
+		Cliente_DAO dao = new Cliente_DAO();
+		List<Cliente> clientes = dao.listar();
+	
+	%>
+	<table class="table table-striped table-light">
+		<tr>
+			<td><b>id</b></td>
+			<td><b>Nome</b></td>
+			<td><b>Ultimo Nome</b></td>
+			<td><b>Endereço de Email</b></td>
+			<td><b>Senha</b></td>
+			<td><b>Cidade</b></td>
+			<td><b>Estado</b></td>
+			<td><b>Cep</b></td>
+			<td><b>Opções</b></td>
+		</tr>
+	
+	<%
+		for(int i = 0; i < clientes.size(); i++){
+			Cliente cliente = clientes.get(i);
+
+	%>
+	<tr>
+		<td><%=cliente.getIdCliente() %></td>
+		<td><%=cliente.getNome() %></td>
+		<td><%=cliente.getUltimoNome() %></td>
+		<td><%=cliente.getEnderecoEmail() %></td>
+		<td><%=cliente.getSenha()%></td>
+		<td><%=cliente.getCidade()%></td>
+		<td><%=cliente.getEstado()%></td>
+		<td><%=cliente.getCep()%></td>
+		
+		<td><a href="alterarCliente.jsp?codigo=<%= cliente.getIdCliente()%>">Alterar dados Cliente</a> <a href="alterarCliente.jsp?codigo=<%= cliente.getIdCliente()%>">Apagar Dados Cliente</a></td>
+	</tr>
+	<%} %>
+	</table>
+	
+</body>
+</html>

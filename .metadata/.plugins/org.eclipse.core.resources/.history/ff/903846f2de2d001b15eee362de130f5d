@@ -1,0 +1,15 @@
+package model;
+
+public class Cliente {
+	private int codigo;
+	private String nome;
+	private String ultimoNome;
+	private String endercoEmail;
+	private String senha;
+	private String cidade;
+	private String estado;
+	private String cep;
+	
+	
+	
+}

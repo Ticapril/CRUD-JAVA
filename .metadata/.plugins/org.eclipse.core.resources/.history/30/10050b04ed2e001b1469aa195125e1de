@@ -1,0 +1,166 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+
+
+import model.Cliente;
+
+public class Cliente_DAO {
+	private Connection conexao; // settei uma conexao
+	
+	public Cliente_DAO(Connection conexao) {
+		this.conexao = conexao;
+	}
+	public boolean cadastrar(Cliente cliente) {
+		String comando = "INSERT INTO cliente VALUE(default,?,?,?,?,?,?,?)";
+		
+		
+		try {
+			//aqui é simples esta preparando o comando, fazendo o java entender comandos sql
+			PreparedStatement stmt = this.conexao.prepareStatement(comando);
+			
+			//preencher as interrogações
+			
+			stmt.setString(1, cliente.getNome());
+			stmt.setString(2, cliente.getUltimoNome());
+			stmt.setString(3, cliente.getEnderecoEmail());
+			stmt.setString(4, cliente.getSenha());
+			stmt.setString(5, cliente.getCidade());
+			stmt.setString(6, cliente.getEstado());
+			stmt.setString(7, cliente.getCep());
+			
+			stmt.execute();
+			
+			stmt.close();
+			
+			return true;
+			
+		}catch(SQLException e){
+			System.out.println("Erro ao inserir cliente");
+			e.printStackTrace();
+			return false;
+		}
+	}
+	
+	public boolean alterar(Cliente cliente) {
+		String comando = "UPDATE cliente SET nome=?,ultimoNome=?,enderecoEmail=?,senha=?,cidade=?,estado=?,cep=? WHERE idCliente=?";
+		
+		
+		try {
+			PreparedStatement stmt = this.conexao.prepareStatement(comando);
+			stmt.setString(1, cliente.getNome());
+			stmt.setString(2, cliente.getUltimoNome());
+			stmt.setString(3, cliente.getEnderecoEmail());
+			stmt.setString(4, cliente.getSenha());
+			stmt.setString(5, cliente.getCidade());
+			stmt.setString(6, cliente.getEstado());
+			stmt.setString(7, cliente.getCep());
+			
+			stmt.execute();
+			stmt.close();
+			return true;
+			} catch(SQLException e) {
+				System.out.println("Erro ao atualizar o cliente!");
+				e.printStackTrace();
+				return false;
+			}
+	}
+	
+	public Cliente buscarPorId(int id) {
+		 String comando = "SELECT * FROM cliente WHERE idCliente=?";
+		 try {
+		 	 
+			 PreparedStatement stmt = this.conexao.prepareStatement(comando);
+			 stmt.setInt(1, id);
+			 ResultSet rs = stmt.executeQuery();//detalhe aqui é necessário utilizar o Query por conta do SELECT
+			 Cliente cliente = null;
+			 
+			 while(rs.next()) { // ponteiro que aponta para a primeira linha do select dessa forma eu consigo percorrer todos os dados que estão armazenados no banco de dados
+				 cliente = new Cliente();
+				 cliente.setIdCliente(rs.getInt("idCliente"));
+				 cliente.setNome(rs.getString("nome"));
+				 cliente.setUltimoNome(rs.getString("ultimoNome"));
+				 cliente.setEnderecoEmail(rs.getString("enderecoEmail"));
+				 cliente.setSenha(rs.getString("senha"));
+				 cliente.setCidade(rs.getString("cidade"));
+				 cliente.setEstado(rs.getString("estado"));
+				 cliente.setCep(rs.getString("cep"));
+			 }
+			 
+			 rs.close(); //fechando para não ocupar espaço na memória
+			 stmt.close();
+			 
+			 return cliente;
+		 }catch (SQLException e) {
+			 System.out.println("Erro ao buscar cliente pelo id!");
+			 e.printStackTrace();
+			 return null;
+		 }
+	}
+	
+	public List<Cliente> listar(){
+		String comando = "SELECT * FROM cliente";
+		
+		try {
+			PreparedStatement stmt = this.conexao.prepareStatement(comando);
+			
+			ResultSet rs = stmt.executeQuery();
+			
+			List<Cliente> clientes = new ArrayList<>(); //criando uma lista de clientes ou seja o objeto lista de clientes  
+			
+			while(rs.next()) {
+				Cliente cliente = new Cliente();
+				cliente.setIdCliente(rs.getInt("idCliente"));
+				cliente.setNome(rs.getString("nome"));
+				cliente.setUltimoNome(rs.getString("ultimoNome"));
+				cliente.setSenha(rs.getString("senha"));
+				cliente.setEnderecoEmail(rs.getString("enderecoEmail"));
+				cliente.setCidade(rs.getString("cidade"));
+				cliente.setEstado(rs.getString("estado"));
+				cliente.setCep(rs.getString("cep"));
+				
+				//depois de armazenar os valores retirado do banco eu crio um novo cliente na minha lista de clientes
+				clientes.add(cliente);
+			}
+			//novamente fecho as classes invocadas para tal tarefa
+			rs.close();
+			stmt.close();
+			return clientes;
+			
+		} catch(SQLException e) {
+			System.out.println("Erro ao buscar os clientes");
+			e.printStackTrace();
+			return null;
+		}
+		
+		
+	}
+	
+	public boolean excluir(int id) {
+		String comando ="DELETE FROM cliente WHERE idCliente=?";
+		
+		try {
+			
+			PreparedStatement stmt = this.conexao.prepareStatement(comando);
+			stmt.setInt(1,  id);
+			stmt.execute();
+			stmt.close();
+			
+			return true;
+			
+		} catch(SQLException e) {
+			System.out.println("Erro ao excluir o cliente!");
+			e.printStackTrace();
+			return false;
+		}
+	}
+	
+	
+
+}

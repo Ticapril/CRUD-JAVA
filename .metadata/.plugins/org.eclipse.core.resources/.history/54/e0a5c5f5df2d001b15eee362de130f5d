@@ -1,0 +1,44 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+
+<%@page import="dao.Categoria_DAO" %>
+<%@page import="java.util.List" %>
+<%@page import="model.Categoria" %>
+
+
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<a href="inserirCategoria.jsp">Inserir Categoria</a>
+	
+	<%
+		Categoria_DAO dao = new Categoria_DAO();
+		List<Categoria> categorias = dao.listar();
+	
+	%>
+	<table border="1" rules="all">
+		<tr>
+			<td><b>Codigo</b></td>
+			<td><b>Nome</b></td>
+			<td><b>Acoes</b></td>
+		</tr>
+	
+	<%
+		for(int i = 0; i < categorias.size(); i++){
+			Categoria categoria = categorias.get(i);
+
+	%>
+	<tr>
+		<td><%=categoria.getCodigo() %></td>
+		<td><%=categoria.getNome() %></td>
+		<td><a href="alterarCategoria.jsp?codigo=<%= categoria.getCodigo()%>">Alterar</a></td>
+	</tr>
+	<%} %>
+	</table>
+	
+</body>
+</html>

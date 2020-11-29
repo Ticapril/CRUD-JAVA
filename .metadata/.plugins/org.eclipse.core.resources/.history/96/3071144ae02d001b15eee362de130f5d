@@ -1,0 +1,63 @@
+package control;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import dao.Categoria_DAO;
+
+import model.Categoria;
+
+/**
+ * Servlet implementation class InserirCategoria
+ */
+@WebServlet("/InserirCategoria")
+public class InserirCategoria extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public InserirCategoria() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String nome = request.getParameter("nome");
+		
+		Categoria categoria = new Categoria();
+		categoria.setNome(nome);
+		
+		Categoria_DAO dao = new Categoria_DAO();
+		String retorno = dao.inserir(categoria);
+		if(retorno.equals("sucesso")) {
+			response.sendRedirect("Index.jsp");
+		}else {
+			PrintWriter out = response.getWriter();
+			out.println("<html>");
+			out.println("<h2>Não foi possivel inserir a categoria!</h2>");
+			out.println("<br/>");
+			out.println("<a href='Index.jsp'>Voltar</a>");
+			out.println("</html>");
+		}
+		
+	}
+
+}

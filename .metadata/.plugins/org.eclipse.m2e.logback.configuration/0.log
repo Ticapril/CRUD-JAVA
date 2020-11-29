@@ -1,0 +1,41 @@
+2020-11-20 18:31:54,070 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-11-20 21:00:44,322 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-11-21 15:58:47,828 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-11-21 20:27:11,939 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @16146095ms to org.eclipse.jetty.util.log.Slf4jLog
+2020-11-21 20:27:12,421 [main] INFO  org.eclipse.jetty.server.Server - jetty-9.4.29.v20200521; built: 2020-05-27T11:26:53.365Z; git: 77c232aed8a45c818fd27232278d9f95a021095e; jvm 15.0.1+9-18
+2020-11-21 20:27:12,497 [main] INFO  org.eclipse.jetty.server.session - DefaultSessionIdManager workerName=node0
+2020-11-21 20:27:12,498 [main] INFO  org.eclipse.jetty.server.session - No SessionScavenger set, using defaults
+2020-11-21 20:27:12,500 [main] INFO  org.eclipse.jetty.server.session - node0 Scavenging every 600000ms
+2020-11-21 20:27:12,540 [main] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@f19177c{/wse,null,AVAILABLE}
+2020-11-21 20:27:12,568 [main] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@69d1e129{HTTP/1.1, (http/1.1)}{0.0.0.0:57501}
+2020-11-21 20:27:12,568 [main] INFO  org.eclipse.jetty.server.Server - Started @16146776ms
+2020-11-21 20:27:12,569 [main] INFO  org.eclipse.jetty.server.session - node0 Scavenging every 660000ms
+2020-11-22 05:31:52,344 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2020-11-22 10:52:54,189 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @23581459ms to org.eclipse.jetty.util.log.Slf4jLog
+2020-11-22 10:52:54,657 [main] INFO  org.eclipse.jetty.server.Server - jetty-9.4.29.v20200521; built: 2020-05-27T11:26:53.365Z; git: 77c232aed8a45c818fd27232278d9f95a021095e; jvm 15.0.1+9-18
+2020-11-22 10:52:54,760 [main] INFO  org.eclipse.jetty.server.session - DefaultSessionIdManager workerName=node0
+2020-11-22 10:52:54,761 [main] INFO  org.eclipse.jetty.server.session - No SessionScavenger set, using defaults
+2020-11-22 10:52:54,763 [main] INFO  org.eclipse.jetty.server.session - node0 Scavenging every 660000ms
+2020-11-22 10:52:54,807 [main] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@14341b74{/wse,null,AVAILABLE}
+2020-11-22 10:52:54,835 [main] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@577c6dab{HTTP/1.1, (http/1.1)}{0.0.0.0:62432}
+2020-11-22 10:52:54,836 [main] INFO  org.eclipse.jetty.server.Server - Started @23582133ms
+2020-11-22 10:52:54,836 [main] INFO  org.eclipse.jetty.server.session - node0 Scavenging every 726000ms
+2020-11-22 11:27:43,267 [Framework stop - Equinox Container: ff6369ec-2f0c-4547-8fec-935726e2565c] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@577c6dab{HTTP/1.1, (http/1.1)}{0.0.0.0:0}
+2020-11-22 11:27:43,268 [Framework stop - Equinox Container: ff6369ec-2f0c-4547-8fec-935726e2565c] INFO  org.eclipse.jetty.server.session - node0 Stopped scavenging
+2020-11-22 11:27:43,599 [Framework stop - Equinox Container: ff6369ec-2f0c-4547-8fec-935726e2565c] INFO  o.e.j.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@14341b74{/wse,null,UNAVAILABLE}
+2020-11-22 17:27:19,983 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-11-24 11:14:57,892 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2020-11-25 04:28:38,666 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @62088266ms to org.eclipse.jetty.util.log.Slf4jLog
+2020-11-25 04:28:40,427 [main] INFO  org.eclipse.jetty.server.Server - jetty-9.4.29.v20200521; built: 2020-05-27T11:26:53.365Z; git: 77c232aed8a45c818fd27232278d9f95a021095e; jvm 15.0.1+9-18
+2020-11-25 04:28:40,587 [main] INFO  org.eclipse.jetty.server.session - DefaultSessionIdManager workerName=node0
+2020-11-25 04:28:40,588 [main] INFO  org.eclipse.jetty.server.session - No SessionScavenger set, using defaults
+2020-11-25 04:28:40,590 [main] INFO  org.eclipse.jetty.server.session - node0 Scavenging every 660000ms
+2020-11-25 04:28:40,745 [main] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@1a6dda0b{/wse,null,AVAILABLE}
+2020-11-25 04:28:40,965 [main] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@426d2b9a{HTTP/1.1, (http/1.1)}{0.0.0.0:51005}
+2020-11-25 04:28:40,965 [main] INFO  org.eclipse.jetty.server.Server - Started @62090678ms
+2020-11-25 04:28:40,966 [main] INFO  org.eclipse.jetty.server.session - node0 Scavenging every 726000ms
+2020-11-25 05:41:59,346 [Framework stop - Equinox Container: 6fc2102e-04f9-4b84-a968-e1fec225daba] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@426d2b9a{HTTP/1.1, (http/1.1)}{0.0.0.0:0}
+2020-11-25 05:41:59,365 [Framework stop - Equinox Container: 6fc2102e-04f9-4b84-a968-e1fec225daba] INFO  org.eclipse.jetty.server.session - node0 Stopped scavenging
+2020-11-25 05:42:01,663 [Framework stop - Equinox Container: 6fc2102e-04f9-4b84-a968-e1fec225daba] INFO  o.e.j.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@1a6dda0b{/wse,null,UNAVAILABLE}
+2020-11-25 19:36:03,422 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2020-11-27 18:08:11,147 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
